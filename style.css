@@ -84,6 +84,9 @@ footer {
     width: 100%;
     max-width: 800px;
     margin: 20px auto;
+    overflow: hidden;
+    margin: 20px auto;
+    position: relative;
 }
 
 .carousel-container {
@@ -113,6 +116,11 @@ footer {
 }
 
 .basic-info {
+#about_us {
+    margin-bottom: 36px;
+}
+
+#short_info {
     margin-bottom: 36px;
 }
 
