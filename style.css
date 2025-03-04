@@ -205,3 +205,84 @@ h2 {
         margin-bottom: 10px;
     }
 }
+
+.mascot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    z-index: 10;
+}
+
+.mascot {
+    width: 125px;
+    border: solid 2px #6D2323;
+    border-radius: 35%;
+    opacity: 0;
+    animation: appear 0.5s ease forwards, jump 1s ease-in-out infinite;
+    animation-delay: 2s, 2s;
+}
+
+.bubble {
+    border: solid 1px #6D2323;
+    visibility: hidden;
+    position: absolute;
+    bottom: 120%;
+    right: 50%;
+    transform: translateX(-50%);
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #333;
+    animation: jump 1s ease-in-out infinite, appear 0.5s ease forwards;
+    animation-delay: 2s, 2s;
+    opacity: 0;
+    white-space: nowrap;
+}
+
+.bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 5%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mascot-container:hover .bubble {
+    visibility: visible;
+    display: block;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
